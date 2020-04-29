@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#Puhkusereis - millal tagasi
+#
+#Programm väljastab antud andmete alusel, mitmendal päeval sa peale
+#pukuse algust koju jõuad
+#
+#skripti algus
+
+echo "Päevad on numbritena kirjutatud" 
+echo "pühapäev - 0 ... laupäev - 6"
+ 
+echo -n "Sisesta ärasõidu päev: "  
+read algus
+
+echo -n "Kui mitu ööpäeva puhkus kestab? (numbritena)"
+read paevad
+
+#Liidame kokku ärasõidu päeva ja reisi kestvuse
+#vastuse jagame nädalaga.
+#Päevad, mis nädalasse ära mahu, liidame reisi algusajaga,
+#saamegi teada millal reisilt koju jõuame
+millal_tagasi=$((($algus + $paevad) % 7))
+
+echo "Tuled reisilt tagasi, päeval nr " $millal_tagasi
+
+#skripti lõpp

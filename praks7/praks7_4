@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+#
+# Sisestame kellaaja automaatselt täistundides,
+# programm väljastab teate millise
+# osaga päevast on tegu
+##
+# Alustame, küsime arvutilt kellaaega ja
+# lõikame sealt välja vajaliku info - tunnid
+kell=`date | cut -c12-13`
+
+
+# Kui kell on 6 ja 12 vahel, on hommik
+if test  $kell -ge 6 -a $kell -lt 12
+then
+        lause "Tere hommikust!"
+
+# Kui kell on 12 ja 18 vahel, on päev
+elif test $kell -ge 12 -a $kell -lt 18
+then
+        lause "Tere päevast!"
+
+# Kui kell on 18 ja 22 vahel, on õhtu
+elif test  $kell -ge 18 -a $kell -lt 22
+then
+        lause "Tere õhtust!"
+
+# Kui kell on 22 ja 6 vahel, on öö
+elif test  $kell -ge 22 -a $kell -le 24 -o $kell -ge 0 -a  $kell -lt 06
+then
+        lause "Head ööd!"
+else
+
+        echo "Sisestasite vale kellaaja,"
+        echo "proovige uuesti!"
+fi
+
+echo
+echo -n "$lause"
+echo -n 'who am i | cut -f1 -d"." | cut -c1 | tr [:lower:] [:upper:]'
+echo -n 'who am i | cut -f1 -d"." | cut -c2-'
+echo "!"

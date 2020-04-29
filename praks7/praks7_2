@@ -1,0 +1,36 @@
+#
+#
+# Programm aastaaja määramiseks kuu järgi
+#
+# Küsib kasutajalt kuu numbri
+#
+echo -e "Sisesta kuu number: "
+read kuu
+
+#Kontrollib kas on talvekuu - kuud numbritega 1, 2 ja 12
+if test $kuu -eq 1 -o $kuu -eq 2 -o $kuu -eq 12
+then
+	echo "On talv!"
+
+#Kontrollib kas on kevadkuu
+elif test $kuu -ge 3 -a $kuu -lt 6
+then
+	echo "Tegu on kevadkuuga"
+
+#Kontrollib kas on suvadkuu
+elif test $kuu -ge 6 -a $kuu -lt 9
+then
+	echo "Tegu on suvekuuga"
+
+#Kontrollib kas on sügis
+elif test $kuu -ge 9 -a $kuu -le 11
+then
+	echo "Tegu on sügiskuuga"
+
+# Kui sisestatakse vale number,
+# mis pole 1 ja 12 vahel, siis veateade
+else
+	echo "Sellist kuud ei ole, proovi uuesti!"
+	echo "Kuude numbrid on 1 ja 12 vahel"
+	echo
+fi

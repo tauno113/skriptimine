@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+#Programm küsib kasutajalt arvu ning tuvastab, 
+#kas on tegu algarvuga või mitte
+echo "Sisesta vabalt valitud täisarv: "
+read t_arv
+if [ $t_arv -eq 0 -o $t_arv -eq 1 ];
+	 then
+        echo "$t_arv - ei ole algarv"
+else
+        jagaja=2
+        jaak=$(($t_arv % $jagaja))
+        while [ $jaak -ne 0 ]
+        do
+                jagaja=$(($jagaja + 1))
+                jaak=$(($t_arv % $jagaja))
+        done
+        if [ $t_arv -eq $jagaja ]; 
+	then
+                echo "$t_arv - on algarv"
+        else
+                echo "$t_arv - ei ole algarv"
+        fi
+fi
+
+

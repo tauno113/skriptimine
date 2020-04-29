@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+#Ainepunktide EAP arvestamine
+#
+#Programm arvestab ainepunktide saamise ajakulu
+#
+echo -n "Palun sisesta ainepunktide arv: "
+read ainepunktid
+echo -n "Palun sisesta nädalate arv: "
+read nadal
+arvutus=`expr $ainepunktid \* 26`
+vastus=`expr $arvutus / $nadal`
+echo "($vastus+0.5)/1" | bc
+
+#skripti lõpp

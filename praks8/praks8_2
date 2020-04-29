@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+#programm palub kasutajal sisestada suvalise täisarvu
+#ja siis liidab täisarvu numbrid omavahel kokku
+#
+#küsime kasutajalt suvalise täisarvu
+#
+echo -n "Sisesta täisarv omal valikul: "
+read t_arv
+echo	-n "Arvu $t_arv liikmete summa on: "
+
+# arvutame numbrite summa
+kokku=0
+while [ $t_arv -ne 0 ]
+do
+	#eraldame üksikud numbrid
+	number2=$(( $t_arv % 10 ))
+	kokku=$(( $kokku  + $number2 ))
+	t_arv=$(( $t_arv  / 10 ))
+done
+echo "$kokku"
+#
+# programmi lõpp

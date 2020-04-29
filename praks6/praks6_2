@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#Küsib palju on reisijaid ja teeb vastustest shortcuti
+
+echo "Sisesta reisijate arv"
+read reisijad
+
+#Küsib istekohtade arvu bussis
+echo "Mitu istekohta on bussis?"
+read kohta
+#
+# Arvutab, mitu bussi läheb vaja
+# reisijate veoks
+#
+
+buss=$(( $reisijad / $kohta ))
+
+#Arvutab, kas keegi maha ka jääb
+jaimaha=$(( $reisijad % $kohta ))
+
+# Kontrollib, ehk on vaja lisabussi?
+
+if test  $jaimaha -gt 0 
+
+then 
+buss=$(($buss + 1 ))
+
+fi
+
+# Väljastame tulemuse
+echo
+echo "Vaja läheb " $buss " bussi"
+echo
+# skripti lõpp

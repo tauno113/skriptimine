@@ -1,0 +1,13 @@
+
+#!/bin/bash
+#Programm liidab lausejupid kokku, korrektseks lauseks
+# President
+aasta="2016" #Aasta
+president="Kersti Kaljulaid" #Presidendi nimi
+lause_keskosa=". aastal valiti Eesti presidendiks " #lause keskosa
+lause="$aasta$lause_keskosa$president" #liidame kokku lauseks
+echo
+echo $lause #väljastame lause
+echo
+#
+#programmi lõpp

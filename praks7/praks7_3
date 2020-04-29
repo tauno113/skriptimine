@@ -1,0 +1,36 @@
+#
+#
+# Sisestades kellaaja täistundides,
+# programm väljastab teate millise 
+# osaga päevast on tegu
+#
+#!/bin/bash
+#
+# Alustame, küsime kellaaega
+echo "Sisesta number 1-12ni"
+read kell
+
+# Kui kell on 6 ja 12 vahel, on hommik
+if test  $kell -ge 6 -a $kell -lt 12
+then
+	echo "Tere hommikust!"
+
+# Kui kell on 12 ja 18 vahel, on päev
+elif test $kell -ge 12 -a $kell -lt 18
+then
+	echo "Tere päevast!"
+
+# Kui kell on 18 ja 22 vahel, on õhtu
+elif test  $kell -ge 18 -a $kell -lt 22
+then
+	echo "Tere õhtust!"
+
+# Kui kell on 22 ja 6 vahel, on öö
+elif test  $kell -ge 22 -a $kell -le 24 -o $kell -ge 0 -a  $kell -lt 06
+then
+	echo "Head ööd!"
+else
+
+	echo "Sisestasite vale kellaaja,"
+	echo "proovige uuesti!"
+fi

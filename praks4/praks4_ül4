@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+#Programm arvutab vastavalt sisestatud inimeste arvule,
+#mitu täis bussi nende vedamiseks vaja läheb ja
+#kas keegi ka maha jääb..
+#
+echo -n "Sisesta reisijate arv? " 
+#Küsib reisijate arvu, kes soovivad sõita
+read reisijatearv
+
+#Küsime, mitme istekohaga on buss
+echo -n "Mitu istekohta on bussis? " 
+read istekohtadearv
+
+#Arvutame kui mitu täis bussitäit sõitjaid tuleb
+kohtibussis=$(( $reisijatearv / $istekohtadearv ))
+
+#Arvutame, kas keegi maha ka jäi
+jaimaha=$(( $reisijatearv % $istekohtadearv ))
+
+#Väljastame tulemuse kui mitu bussi sõitjaid täis sai ja
+#kas keegi maha ka jäi
+echo
+echo   $kohtibussis " bussi sai sõitjaid täis"
+echo  "Maha jäi " $jaimaha "inimest..."
+echo
+
+#skripti lõpp

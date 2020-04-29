@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+osch=0
+echo "1. Unix (Sun Os)"
+echo "2. Linux (Red Hat)"
+echo
+echo -n "Tee oma op süsteemi valik [1 v6i 2]? "
+read osch
+if [ $osch -eq 1 ] ; then
+	echo    
+	echo "Sa valisid Unix'i (Sun Os)"
+else #### nested if i.e. if within if ######
+       if [ $osch -eq 2 ] ; then
+             echo "Sa valisid Linux'i (Red Hat)"
+       else
+             echo "Miks sulle ei meeldi Unix/Linux OS."
+       fi
+fi
+#
+

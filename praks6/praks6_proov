@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Paaris või paaritu arv
+#
+#
+echo -n "Sisesta suvaline täisarv: "
+read arv
+# jagame saadud arvu 2ga, et teada saada kas tuleb jääk või mitte
+jaak=$(( $arv % 2 ))
+# 4 % 2 => 0 -> siis on paarisarvuga tegu
+# 5 % 2 => 1 -> siis on paaritu arvuga tegu
+if [ $jaak -eq 0 ]
+then
+echo
+echo "$arv tegu on paarisarvuga "
+echo
+else
+echo
+echo "$arv tegu on paaritu arvuga"
+echo
+fi
+# tingimus kontrolli lõpp

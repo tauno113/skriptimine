@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+echo
+#Küsime külje A pikkuse
+echo "Sisesta kylje A pikkus: "
+read kylgA
+
+#Küsime külje B pikkuse
+echo "Sisesta kylje B pikkus: "
+read kylgB
+
+
+#Arvutame C külje
+let "kylgC= $kylgA * kylgA + $kylgB * $kylgB"
+
+#arvutame ruutjuure
+v=$(echo "scale=2; sqrt($kylgC)" | bc)
+
+echo "Kolmas külg on " $v
+echo
+
+#skripti lõpp
+
+
+

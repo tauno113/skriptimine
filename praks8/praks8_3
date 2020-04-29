@@ -1,0 +1,25 @@
+#/bin/bash
+#
+#Programm küsib kasutajalt numbri 1-12ni ja väljastab
+#selle numbri alusel, mis kuule number vastab
+#
+#
+echo "Sisesta kuu number (1-12): "
+read kuu_nr
+if [ $kuu_nr -ge 1 -a $kuu_nr -le 12 ]; then
+	#anname kuudele õiged numbrilised vasted
+	kuud=(jaanuar veebruar marts aprill mai juuni juuli august september oktoober november detsember)
+	for kuu in 1 2 3 4 5 6 7 8 9 10 11 12
+	do
+		if [ $kuu_nr -eq $kuu ]; then
+			echo "See on ${kuud[$(($kuu-1))]}i kuu!"; 
+			break
+		fi
+	done
+else
+	# kui kasutaja siiski sisestas vale numbri tuleb järgmine teavitus
+	echo "Sisestasid vale numbri, kuude numbrid on vahemikus 1-12"
+	echo "Proovi uuesti ;) "
+fi
+#
+#programmi lõpp
